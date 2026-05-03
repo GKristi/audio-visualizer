@@ -2,36 +2,148 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 100vh;
     margin: 0;
-    background-color: #1a1a1a;
+    padding-top: 40px;
+    background-color: #0d1117;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 canvas {
-    background-color: #2a2a2a;
-    border-radius: 8px;
+    background-color: #0b0f14;
+    border: 1px solid #30363d;
+    border-radius: 12px;
     margin: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    width: 280px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background-color: transparent;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    border-radius: 6px;
     cursor: pointer;
-    margin: 10px;
+    margin: 20px 10px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #00ffff;
+    color: #0d1117;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    transform: scale(1.05);
+}
+button:active {
+    transform: scale(0.98);
 }
 
 .status {
     margin: 10px;
     font-size: 14px;
+    color: #8b949e;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.applications-section {
+    color: #c9d1d9;
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1, .main-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+
+}
+
+.card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    /* Плавна анімація */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #00ffff;
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.1);
+}
+
+.icon-box {
+    font-size: 45px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.6));
+}
+
+
+.card h2 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin: 0 0 5px 0;
+}
+
+.subtitle {
+    display: block;
+    font-size: 0.9rem;
+    color: #8b949e;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Список (текст) */
+.card ul {
+    list-style-type: none;
+    /* Прибираємо стандартні крапки */
+    padding-left: 0;
+    margin: 0;
+}
+
+.card li {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 20px;
+}
+
+
+.card li::before {
+    content: "▹";
+    color: #00ffff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2rem;
+}
+
+.card li strong {
+    color: #58a6ff;
 }

@@ -7,11 +7,11 @@ const startButton = document.getElementById("startButton");
 startButton.addEventListener("click", async () => {
     if (!audioContext) {
         await setupMicrophone();
-        startButton.textContent = "Stop Microphone";
+        startButton.textContent = "Вимкнути мікрофон";
         drawWaveform();
     } else {
         stopMicrophone();
-        startButton.textContent = "Start Microphone";
+        startButton.textContent = "Запустити мікрофон";
         stopDrawing();
     }
 });
@@ -46,12 +46,12 @@ function drawWaveform() {
         analyser.getByteTimeDomainData(dataArray);
 
         // Fill canvas background
-        ctx.fillStyle = "#2a2a2a";
+        ctx.fillStyle = "#0b0f14";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         // Define line color and width
         ctx.lineWidth = 2;
-        ctx.strokeStyle = "#4CAF50";
+        ctx.strokeStyle = "#00ffff";
         // Start defining the path to draw
         ctx.beginPath();
 
